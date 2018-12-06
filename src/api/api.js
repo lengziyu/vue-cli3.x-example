@@ -6,7 +6,7 @@ import * as _ from '../utils/util'
 // axios 配置
 axios.defaults.timeout = 5000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-axios.defaults.baseURL = 'https://h5.xx.cn/';
+axios.defaults.baseURL = 'https://easy-mock.com/mock/5c08897582538f1a07bc87cd/yhby_copy';
 
 //POST传参序列化
 axios.interceptors.request.use((config) => {
@@ -33,25 +33,39 @@ axios.interceptors.response.use((res) =>{
     return Promise.reject(error);
 });
 
-export function fetch(url, params) {
+export function fetch(url, method, params) {
     return new Promise((resolve, reject) => {
+      if(method == 'post'){
         axios.post(url, params)
-            .then(response => {
-                resolve(response.data);
-            }, err => {
-                reject(err);
-            })
-            .catch((error) => {
-               reject(error)
-            })
+          .then(response => {
+              resolve(response.data);
+          }, err => {
+              reject(err);
+          })
+          .catch((error) => {
+             reject(error)
+          })
+      }else if(method == 'get'){
+        axios.get(url, {
+            params: params
+          })
+          .then(response => {
+              resolve(response.data);
+          }, err => {
+              reject(err);
+          })
+          .catch((error) => {
+             reject(error)
+          })
+        }
     })
 }
 
 export default {
     /**
-     * 用户登录
+     * 测试
      */
-    Login(params) {
-        return fetch('/login', params)
+    Test(params) {
+        return fetch('/test', 'get', params)
     }
 }

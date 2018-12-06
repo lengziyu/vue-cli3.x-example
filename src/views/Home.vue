@@ -3,8 +3,8 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Vue cli 3.x and Vant UI"/>
     <van-button type="primary">主要按钮</van-button>
-    <van-button type="warning" @click="clickShowDialog()">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+    <van-button type="warning" @click="showDialog()">警告按钮</van-button>
+    <van-button type="danger" @click="linkTest()">测试数据</van-button>
   </div>
 </template>
 
@@ -22,12 +22,15 @@ export default {
     [Dialog.name]: Dialog
   },
   methods: {
-    clickShowDialog() {
+    showDialog() {
       Dialog.alert({
-        message: '一呼百应是B2C的公司，致力于成为商家服务领域里最被信任的引领者'
+        message: 'Vue cli 3.x and Vant UI!'
       }).then(() => {
         // on close
       });
+    },
+    linkTest() {
+      this.$router.push('/test')
     }
   }
 }
