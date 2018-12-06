@@ -12,7 +12,7 @@
 $ npm i
 
 # 本地环境，打开：localhost:8008
-$ npm run serve
+$ npm run dev
 
 # 打包
 $ npm run build
