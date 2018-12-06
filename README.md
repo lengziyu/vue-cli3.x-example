@@ -1,15 +1,15 @@
 # H5移动端项目
 
-> 根据项目需求用vue-cli 3.x改造过的，前期项目暂用于与APP交互（分享、token、call phone）、活动页面。
+> 根据项目需求用vue-cli 3.x改造过的vue-cli3.x-example。
 
 ## 安装&使用
 
 ``` bash
-# svn地址
-svn://192.168.4.127/trunk/h5_code/shop-H5
+# 克隆到本地
+# https://github.com/lengziyu/vue-cli3.x-example.git
 
 # 安装依赖
-$ cnpm i
+$ npm i
 
 # 本地环境，打开：localhost:8008
 $ npm run serve
@@ -25,9 +25,9 @@ $ vue ui
 ```
 
 ## 功能点
-除了vue-cli本身自带的功能外，还配置了：
+除了vue-cli3.x本身自带的功能外，还配置了：
 - [Vant UI](https://youzan.github.io/vant)
-- 全局函数、全局变量
+- 全局函数、全局变量、全局样式
 - Flexible rem适配
 - babel-polyfill兼容处理
-- api管理
+- api统一管理（可拦截）
